@@ -4,19 +4,21 @@ using namespace std;
 
 
 int fib(int n) {
-    if (n <= 1) {
-        return 0;
+    int fib1 = 0;
+    int fib2 = 1;
+    for (int i = 3; i <= n; ++i) {
+        int fibSum = fib1 + fib2;
+        cout << fib1 << endl;
+        fib1 = fib2;
+        fib2 = fibSum;
     }
-    else if (n == 2) {
-        return 1;
-    }
-    else {
-        return fib(n - 1) + fib(n - 2);
-    }
+    cout << fib1 << endl;
+    return fib2;
 }
 
 int main()
 {
     cout << "Hello world!" << endl;
+    cout << fib(10);
 }
 
